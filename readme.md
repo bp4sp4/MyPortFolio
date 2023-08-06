@@ -7,12 +7,12 @@
 2. 프로그레스바 원형 추가<br>
 3. MoviePlaza -> 노마드코더 크롬앱 일단 이런순서<br>
 4. 사진 넣을꺼 캡쳐
-
+<hr>
 <h1>23/07/31</h1>
 1. fullpage.js -> reveal.js 교체<br>
 2. 메인 부족함 <br>
 3. 자기소개 reveal pre, code 사용 
-
+<hr>
 <h1>23/07/27</h1>
 1. 포트폴리오 영역 사진영역<br>
 2. readmore 버튼 추가<Br>
