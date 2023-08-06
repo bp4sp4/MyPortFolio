@@ -1,8 +1,92 @@
-section.has-light-background h3{
-    color:#fe8c13;
-}
-.testworld{
+.myinfo{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.myinfo #my-font{
+    margin-left: 50px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.movieplaza{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.movieplaza .movie-mg{
+    margin-right: 130px;
+}
+
+.movieplaza .movie-mg #movie-font{
+    font-size: 30px;
+}
+
+#movie-p{
+    display: block;
+    
+}
+
+.r-stack #movive-img{
+    width: 500px;
+}
+.skills-p{
+    display: flex;
+    justify-content: center;
+    margin-top: 210px;
+}
+#html{
+    position: absolute;
+    top: 400px;
+    left: 145px;
+}
+#css{
+    position: absolute;
+    top:400px;
+    left: 48%;
+}
+#java{
+    position: absolute;
+    top:400px;
+    left: 74%;
+}
+
+.donut-wrap {
+    
+    display: flex;
+    
+    justify-content: center;  /* 자식 요소들 사이의 간격을 동일하게 맞춤 */
+    height: 150px; /* donut-wrap의 높이 조절 */
+    margin-left: 50px;
+  }
+  
+  #donut, #donut2, #donut3 {
+    width: 300px;
+    height: 286px;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+    text-align: center;
+    margin-right: 20px;
+  }
+    
+  #donut::before, #donut2::before, #donut3::before {
+    color: #fff;
+    width: 70%;
+    background: #264057;
+    border-radius: 50%;
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    display: block;
+    content: attr(data-percent)'%';
+    transform: skew(-0.03deg);
+    margin: auto;
+    font-weight: 800;
+    font-size: 2vw;
+    padding: calc(35% - 1.3vw) 0;
+  }
+  

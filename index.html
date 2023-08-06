@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>포트폴리오-박상훈</title>
-        <link rel="stylesheet" href="/css/style.css">
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
 
-		
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>포트폴리오-박상훈</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
 <body class="reveal">
     <div class="slides">
-        <section >
-            <p>안녕하세요!</p>
-            <p class="fragment fade-down">박상훈의 포트폴리오 사이트에</p>
-            <p class="fragment fade-down"> 오신걸 환영합니다!</p>
+        <section data-background-color="black">
+            <img id="movive-img fade-out" class="fragment" src="img/main.png" width="auto" height="auto">
         </section>
-        <section><h1>자기소개</h1></section>
         <section>
-            <section data-background-color="#fbffc5">
-                <h3 class="font">#끊임없는! #노력하는! #배움에끝은없다!</h3>
-                <pre>
+            <h1>자기소개</h1>
+        </section>
+        <section data-background-color="#fbffc5">
+
+            <h3 style="color: #fe8c13;">#끊임없는! #노력하는! #배움에끝은없다!</h3>
+            <pre>
                     <code data-line-numbers="1-4 | 6-9 | 10-13 | 15-18" data-trim data-noescape>
                         const hello { 
                             x : 안녕하세요! 배움에 겁이 없는
@@ -45,30 +45,94 @@
                         }
                     </code>
                 </pre>
-            </section>
-            
-               
-            </section>
-            <section><h1>포트폴리오</h1></section>
-            <section ><div class="testworld"><p class="">Testworld</p> <img src="/img/TestWorldMain.png" alt="테스트월드"></div></section>
+        </section>
+        <section>
+            <div class="myinfo">
+                <img src="img/myimg.jpeg" alt="얼굴" width="400px" height="400px">
+                <div>
+                    <p id="my-font" class="fragment"> 22.02 | 대림대학교 컴퓨터정보학부 졸업</p>
+                    <p id="my-font" class="fragment">22.04 | 와이즈스톤티 앱,웹 QA테스터 근무 (21.10 ~ 22.04)</p>
+                    <p id="my-font" class="fragment">22.05 | 한국 ICT인재개발원 (22.05 ~ 22.12) </p>
+                    <p id="my-font" class="fragment">23.02 | 새롬정보시스템 AI빅데이터그룹파트원 (23.02 ~ 23.05)</p>
+                    <p id="my-font" class="fragment">Tools : HTMl5, CSS, JQuery, JavaScript 더적기</p>
 
-            <section></section>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h2 class="fragment fade-down">저의 스킬은</h2>
+            </div>
+            <div class="donut-wrap">
+                <div id="donut" data-percent="30"></div>
+                <div id="html">
+                <p>HTML</p>
+            </div>
+                <div id="donut2" data-percent="55"></div>
+                <p id="css">CSS</p>
+                <div id="donut3" data-percent="80"></div>
+                <p id="java">JavaScript</p>
+            </div>
+ 
+        </section>
+        <section>
+            <h1>포트폴리오</h1>
+        </section>
+        <section>
+            <h2><a href="https://github.com/bp4sp4/MoviePlaza">MoviePlaza</a></h2>
+            <div class="movieplaza">
+                <div class="movie-mg">
+                    <p id="movie-font" class="fragment fade-down">작업기간 : 2개월</p>
+                    <p id="movie-font" class="fragment fade-down"></p>
+                </div>
+                <div class="r-stack">
+                    <img id="movive-img fade-out" class="fragment" src="img/workdb.png" width="550px" height="450px">
+                    <img id="movive-img fade-out" class="fragment" src="img/trend.png" width="550px" height="450px">
+                    <img id="movive-img fade-out" class="fragment" src="img/Ott.png" width="550px" height="450px">
+                </div>
+            </div>
+        </section>
         </section>
     </div>
     <script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+    <script>
+        const totalMinwon = [30, 55, 80]; // Update this array with desired data-percent values
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
+        const donut = document.querySelector("#donut");
+        let t4 = 0;
+        const donutAnimation = setInterval(() => {
+            donut.dataset.percent = t4;
+            donut.style.background = `conic-gradient(#4F98FF 0 ${t4}%, #DEDEDE ${t4}% 100%)`;
+            t4++ >= totalMinwon[0] && clearInterval(donutAnimation);
+        }, 10);
+
+        // Donut 2 animation
+        const donut2 = document.querySelector("#donut2");
+        let t5 = 0;
+        const donutAnimation2 = setInterval(() => {
+            donut2.dataset.percent = t5;
+            donut2.style.background = `conic-gradient(#4F98FF 0 ${t5}%, #DEDEDE ${t5}% 100%)`;
+            t5++ >= totalMinwon[1] && clearInterval(donutAnimation2);
+        }, 10);
+
+        // Donut 3 animation
+        const donut3 = document.querySelector("#donut3");
+        let t6 = 0;
+        const donutAnimation3 = setInterval(() => {
+            donut3.dataset.percent = t6;
+            donut3.style.background = `conic-gradient(#4F98FF 0 ${t6}%, #DEDEDE ${t6}% 100%)`;
+            t6++ >= totalMinwon[2] && clearInterval(donutAnimation3);
+        }, 10);
+    </script>
 </body>
+
 </html>
