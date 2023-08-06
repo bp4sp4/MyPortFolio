@@ -59,21 +59,20 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section section="per">
             <div>
-                <h2 class="fragment fade-down">저의 스킬은</h2>
+                <h2>저의 스킬은</h2>
+                <div id="donut-wrap">
+                    <div id="donut" data-percent="80"></div>
+                    <div id="html">
+                        <p>HTML5</p>
+                    </div>
+                    <div id="donut2" data-percent="85"></div>
+                    <p id="css">CSS3</p>
+                    <div id="donut3" data-percent="80"></div>
+                    <p id="java">JavaScript</p>
+                </div>
             </div>
-            <div class="donut-wrap">
-                <div id="donut" data-percent="30"></div>
-                <div id="html">
-                <p>HTML</p>
-            </div>
-                <div id="donut2" data-percent="55"></div>
-                <p id="css">CSS</p>
-                <div id="donut3" data-percent="80"></div>
-                <p id="java">JavaScript</p>
-            </div>
- 
         </section>
         <section>
             <h1>포트폴리오</h1>
@@ -103,36 +102,33 @@
             hash: true,
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
         });
+    
+        // Function to animate the percentage gauge
+        function animateGauge(gaugeElement, totalValue) {
+            let t = 0;
+            const animation = setInterval(() => {
+                gaugeElement.dataset.percent = t;
+                gaugeElement.style.background = `conic-gradient(#E54C21 0 ${t}%, #DEDEDE ${t}% 100%)`;
+                t++ >= totalValue && clearInterval(animation);
+            }, 10);
+        }
+    
+        // Listen for the slidechanged event
+        Reveal.addEventListener('slidechanged', (event) => {
+            const currentSlide = event.currentSlide;
+            const isPercentageSlide = currentSlide.hasAttribute('section') && currentSlide.getAttribute('section') === 'per';
+    
+            if (isPercentageSlide) {
+                const totalMinwon = [80, 85, 80]; // Update this array with desired data-percent values
+    
+                // Start animations for each percentage gauge
+                animateGauge(document.querySelector("#donut"), totalMinwon[0]);
+                animateGauge(document.querySelector("#donut2"), totalMinwon[1]);
+                animateGauge(document.querySelector("#donut3"), totalMinwon[2]);
+            }
+        });
     </script>
-    <script>
-        const totalMinwon = [30, 55, 80]; // Update this array with desired data-percent values
-
-        const donut = document.querySelector("#donut");
-        let t4 = 0;
-        const donutAnimation = setInterval(() => {
-            donut.dataset.percent = t4;
-            donut.style.background = `conic-gradient(#4F98FF 0 ${t4}%, #DEDEDE ${t4}% 100%)`;
-            t4++ >= totalMinwon[0] && clearInterval(donutAnimation);
-        }, 10);
-
-        // Donut 2 animation
-        const donut2 = document.querySelector("#donut2");
-        let t5 = 0;
-        const donutAnimation2 = setInterval(() => {
-            donut2.dataset.percent = t5;
-            donut2.style.background = `conic-gradient(#4F98FF 0 ${t5}%, #DEDEDE ${t5}% 100%)`;
-            t5++ >= totalMinwon[1] && clearInterval(donutAnimation2);
-        }, 10);
-
-        // Donut 3 animation
-        const donut3 = document.querySelector("#donut3");
-        let t6 = 0;
-        const donutAnimation3 = setInterval(() => {
-            donut3.dataset.percent = t6;
-            donut3.style.background = `conic-gradient(#4F98FF 0 ${t6}%, #DEDEDE ${t6}% 100%)`;
-            t6++ >= totalMinwon[2] && clearInterval(donutAnimation3);
-        }, 10);
-    </script>
+    
 </body>
 
 </html>

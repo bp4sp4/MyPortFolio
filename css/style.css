@@ -41,12 +41,12 @@
 #html{
     position: absolute;
     top: 400px;
-    left: 145px;
+    left: 135px;
 }
 #css{
     position: absolute;
     top:400px;
-    left: 48%;
+    left: 47%;
 }
 #java{
     position: absolute;
@@ -54,7 +54,7 @@
     left: 74%;
 }
 
-.donut-wrap {
+#donut-wrap {
     
     display: flex;
     
