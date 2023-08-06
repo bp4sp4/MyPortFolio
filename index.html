@@ -15,7 +15,7 @@
 <body class="reveal">
     <div class="slides">
         <section data-background-color="black">
-            <img id="movive-img fade-out" class="fragment" src="img/main.png" width="auto" height="auto">
+            <img id="movive-img" src="img/main.png" width="auto" height="auto">
         </section>
         <section>
             <h1>자기소개</h1>
@@ -97,37 +97,7 @@
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
-    <script>
-        Reveal.initialize({
-            hash: true,
-            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
-        });
-    
-        // Function to animate the percentage gauge
-        function animateGauge(gaugeElement, totalValue) {
-            let t = 0;
-            const animation = setInterval(() => {
-                gaugeElement.dataset.percent = t;
-                gaugeElement.style.background = `conic-gradient(#E54C21 0 ${t}%, #DEDEDE ${t}% 100%)`;
-                t++ >= totalValue && clearInterval(animation);
-            }, 10);
-        }
-    
-        // Listen for the slidechanged event
-        Reveal.addEventListener('slidechanged', (event) => {
-            const currentSlide = event.currentSlide;
-            const isPercentageSlide = currentSlide.hasAttribute('section') && currentSlide.getAttribute('section') === 'per';
-    
-            if (isPercentageSlide) {
-                const totalMinwon = [80, 85, 80]; // Update this array with desired data-percent values
-    
-                // Start animations for each percentage gauge
-                animateGauge(document.querySelector("#donut"), totalMinwon[0]);
-                animateGauge(document.querySelector("#donut2"), totalMinwon[1]);
-                animateGauge(document.querySelector("#donut3"), totalMinwon[2]);
-            }
-        });
-    </script>
+    <script src="js/progressbar.js"></script>
     
 </body>
 
